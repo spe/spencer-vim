@@ -77,23 +77,15 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 export TERM="xterm-256color"
-#alias tmux="tmux -2"
+
 # User specific aliases and functions
-alias MMM='cd $HOME/devArea/BSP/mongoose/Mngse_PRJ/working_build'
-alias GGG4='cd $HOME/devArea/BSP/dell/14g'
-alias GGG3='cd $HOME/devArea/BSP/dell/13g'
-alias GGG1='cd $HOME/devArea/BSP/dell/11g'
-alias EEE='cd apps/ipmi/core && vim cdf/prdd/PMBus.c'
-alias PPP='vim cdf/prdd/PMBus.c'
 alias TAGS='ctags -R --exclude=.git && cscope -Rbkq'
 alias UTAGS='rm cscope* tags'
 alias ls='ls --color'
 alias TTT='tmux attach -t 0'
 alias TTTT='tmux attach -t '
-#alias TTTN='tmux new -t i2c_drv'
 alias TTTN='tmux new -s i2c_drv'
 
-#PATH=$HOME/bin:$HOME/bin/bin:$HOME/bin/bin.vim.64bit/bin:/usr/sbin:$PATH:/home/coverity/cov-sa-linux-5.4.0/bin
-PATH=$HOME/bin:$HOME/bin/bin.vim.64bit/bin:/usr/sbin:$PATH
+PATH=$HOME/bin:/usr/sbin:$PATH
 
 export SVN_EDITOR=vim
