@@ -92,18 +92,7 @@ alias TTT='tmux attach -t 0'
 alias TTTT='tmux attach -t '
 #alias TTTN='tmux new -t i2c_drv'
 alias TTTN='tmux new -s i2c_drv'
-alias MBIN='wget https://hsv-svn-dell-mirror.emrsn.org/repo -O ~/bin/repo --no-check-certificate && chmod 755 ~/bin/repo'
-#alias MBIN_2='~/bin/repo init -u https://hsv-svn-dell-mirror.emrsn.org/git/dellsrc/manifest -b rel/idrac8/master -m avct.xml'
-alias MBIN_21='~/bin/repo init -u https://hsv-svn-dell-mirror.emrsn.org/git/dellsrc/manifest -b rel/idrac8/wave1/master -m avct.xml'
-alias MBIN_22='~/bin/repo init -u https://hsv-svn-dell-mirror.emrsn.org/git/dellsrc/manifest -b rel/idrac8/wave2/master -m avct.xml'
-alias MBIN_23='~/bin/repo init -u https://hsv-svn-dell-mirror.emrsn.org/git/dellsrc/manifest -b rel/idrac8/wave3/master -m avct.xml'
-alias MBIN_2='~/bin/repo init -u https://hsv-svn-dell-mirror.emrsn.org/git/dellsrc/manifest -b rel/idrac8/master -m avct.xml'
-alias MBIN_3='~/bin/repo sync --no-clone-bundle'
-alias MBIN_4='sed -i 's/{arch}/{pkg_arch}/g' scripts/setup/audit-yocto.sh'
-alias MBIN_5='source scripts/shell-setup && yocto build-all'
-alias MBIN_NA='nice -n 99 ~/bin/repo sync --no-clone-bundle && source scripts/shell-setup && nice -n 99 yocto build-all'
 
-export VIMRUNTIME=$HOME/bin/bin.vim.64bit/share/vim/vim74
 #PATH=$HOME/bin:$HOME/bin/bin:$HOME/bin/bin.vim.64bit/bin:/usr/sbin:$PATH:/home/coverity/cov-sa-linux-5.4.0/bin
 PATH=$HOME/bin:$HOME/bin/bin.vim.64bit/bin:/usr/sbin:$PATH
 
