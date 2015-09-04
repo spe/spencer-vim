@@ -132,13 +132,13 @@ let g:bookmark_annotation_sign = 'B'
 let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
-call unite#custom#profile('source/vim_bookmarks', 'context', {
-    \   'winheight': 13,
-    \   'direction': 'botright',
-    \   'start_insert': 0,
-    \   'keep_focus': 1,
-    \   'no_quit': 1,
-    \ })
+"call unite#custom#profile('source/vim_bookmarks', 'context', {
+"    \   'winheight': 13,
+"    \   'direction': 'botright',
+"    \   'start_insert': 0,
+"    \   'keep_focus': 1,
+"    \   'no_quit': 1,
+"    \ })
 
 " ctrlp
 "---------------------------------------------------------------------------
