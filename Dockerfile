@@ -50,7 +50,7 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     rm -rf Vundle.vim/.git
 
 # Powerline fonts
-    mkdir -p $HOME/.fonts $HOME/.config/fontconfig/conf.d && \
+RUN mkdir -p $HOME/.fonts $HOME/.config/fontconfig/conf.d && \
     wget -P $HOME/.fonts                     https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf && \
     wget -P $HOME/.config/fontconfig/conf.d/ https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf && \
     fc-cache -vf $HOME/.fonts/ && \
