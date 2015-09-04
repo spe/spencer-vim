@@ -163,6 +163,7 @@ noremap <silent> <F8> :cal VimCommanderToggle()<CR>
 " NERDTreeTabs
 "---------------------------------------------------------------------------
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:NERDTreeDirArrows=0
 
 " syntastic
 "---------------------------------------------------------------------------
