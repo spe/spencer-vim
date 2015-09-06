@@ -4,7 +4,8 @@ MAINTAINER Spencer Tsai <spencer.tsai@gmail.com>
 # environment variables
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD fs/ /
+#ADD fs/ /
+COPY fs/home/dev/* /home/spencer
 
 # install pagkages
 RUN apt-get update                                                      && \
