@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #ADD fs/ /
 COPY fs/home/dev/* /home/spencer/
+COPY fs/home/dev/* /root/
 
 # install pagkages
 RUN apt-get update                                                      && \
