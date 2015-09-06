@@ -22,24 +22,24 @@ RUN apt-get update                                                      && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
     make install                                                        && \
 # add dev user
-    adduser dev --disabled-password --gecos ""                          && \
+    adduser spencer --disabled-password --gecos ""                      && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
     cp /usr/share/zoneinfo/America/Los_Angeles /etc/localtime           && \
     dpkg-reconfigure locales                                            && \
     locale-gen en_US.UTF-8                                              && \
     /usr/sbin/update-locale LANG=en_US.UTF-8                            && \
-    chown -R dev:dev /home/dev                                          && \
+    chown -R spencer:spencer /home/spencer                              && \
 # cleanup
     apt-get remove -y ncurses-dev                                       && \
     apt-get autoremove -y                                               && \
     apt-get clean                                                       && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /home/dev
-ENV HOME=/home/dev                                                         \
-    USER=dev
+WORKDIR /home/spencer
+ENV HOME=/home/spencer                                                     \
+    USER=spencer
 ENV LC_ALL en_US.UTF-8
-USER dev
+USER spencer
 
 # install vim plugins
 RUN mkdir -p ~/.vim/bundle                                              && \
