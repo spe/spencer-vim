@@ -11,6 +11,7 @@ COPY fs/home/dev/* /root/
 # install pagkages
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags            \
+        python python-dev ruby ruby-dev                                    \
         mercurial cscope git make bash-completion wget fontconfig       && \
     cd /tmp                                                             && \
 # build and install vim
