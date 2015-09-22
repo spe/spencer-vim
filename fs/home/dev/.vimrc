@@ -53,7 +53,7 @@ Plugin 'taglist.vim'
 Plugin 'winmanager'
 Plugin 'jistr/vim-nerdtree-tabs'
 
-Plugin 'a.vim'
+Plugin 'spe/a.vim'
 Plugin 'vimwiki'
 "Plugin 'dokuwiki'
 "Plugin 'vim-dokuwiki'
