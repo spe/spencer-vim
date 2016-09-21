@@ -21,7 +21,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'majutsushi/tagbar'
 "Plugin 'chrisbra/csv.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 "Plugin 'edkolev/tmuxline.vim'
@@ -53,7 +53,7 @@ Plugin 'taglist.vim'
 Plugin 'winmanager'
 Plugin 'jistr/vim-nerdtree-tabs'
 
-Plugin 'spe/a.vim'
+Plugin 'a.vim'
 Plugin 'vimwiki'
 "Plugin 'dokuwiki'
 "Plugin 'vim-dokuwiki'
@@ -102,13 +102,18 @@ Plugin 'vim-scripts/Conque-GDB'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" ConqueGdb
+" load coverity command
+let coverity_vimrc = $HOME . "/.vim/coverity.vimrc"
+if filereadable(coverity_vimrc)
+    execute "source " . fnameescape(coverity_vimrc)
+endif
+
+" Conque-GDB
 "---------------------------------------------------------------------------
 let g:ConqueTerm_Color = 2 " 1: strip color after 200 lines, 2: always with color 
 let g:ConqueTerm_CloseOnEnd = 1 " close conque when program ends running 
 let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly
-let g:ConqueGdb_SrcSplit = 'right'
-let g:ConqueGdb_GdbExe = 'sh4-poky-linux-gdb'
+let g:ConqueGdbExe = 'sh4-poky-linux-gdb'
 
 " undotree
 "---------------------------------------------------------------------------
@@ -142,13 +147,15 @@ let g:bookmark_annotation_sign = 'B'
 let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
-"call unite#custom#profile('source/vim_bookmarks', 'context', {
-"    \   'winheight': 13,
-"    \   'direction': 'botright',
-"    \   'start_insert': 0,
-"    \   'keep_focus': 1,
-"    \   'no_quit': 1,
-"    \ })
+call unite#custom#profile('source/vim_bookmarks', 'context', {
+    \   'winheight': 13,
+    \   'direction': 'botright',
+    \   'start_insert': 0,
+    \   'keep_focus': 1,
+    \   'no_quit': 1,
+    \ })
+" mn :  move to next bookmark
+" mp :  move to previos bookmark
 
 " ctrlp
 "---------------------------------------------------------------------------
@@ -173,7 +180,6 @@ noremap <silent> <F8> :cal VimCommanderToggle()<CR>
 " NERDTreeTabs
 "---------------------------------------------------------------------------
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
-let g:NERDTreeDirArrows=0
 
 " syntastic
 "---------------------------------------------------------------------------
@@ -198,7 +204,7 @@ set encoding=utf-8
 
 " for airline settings:
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_detect_whitespace=0
+let g:airline_detect_whitespace=0
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -373,7 +379,7 @@ function! QFixToggle(forced)
         cclose
         unlet g:qfix_win
     else
-        copen 7
+        copen 10
         let g:qfix_win = bufnr("$")
     endif
 endfunction
@@ -538,6 +544,7 @@ nmap <C-q> :colder<CR>:cc<CR>
 
 nmap [h <Plug>GitGutterPrevHunk<CR>
 nmap ]h <Plug>GitGutterNextHunk<CR>
+nmap ]g <Plug>GitGutterSignsToggle<CR>
 
 "map <A-m> :call Vm_toggle_sign() <CR>
 "map µ :call Vm_toggle_sign() <CR>
